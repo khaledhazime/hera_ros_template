@@ -1,0 +1,10 @@
+# ExampleService.srv
+# A simple service template that uses ExampleMessage
+
+# request part
+ExampleMessage request_data
+
+---
+# response part
+bool success    # indicate if the service call was successful
+string message  # additional information or feedback
