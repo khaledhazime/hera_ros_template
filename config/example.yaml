@@ -1,0 +1,24 @@
+# Basic Configuration YAML Template
+
+# General settings
+name: "example"
+version: "1.0"
+description: "Basic configuration for ROS package."
+
+# Parameters
+parameters:
+  param1: "value1"
+  param2: 2
+  param3: true
+
+# Example list
+list_example:
+  - item1
+  - item2
+  - item3
+
+# Example dictionary
+dictionary_example:
+  key1: "value1"
+  key2: "value2"
+  key3: 3
