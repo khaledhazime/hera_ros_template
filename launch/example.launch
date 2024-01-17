@@ -1,0 +1,36 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="arg1" default="value1" />
+    <arg name="arg2" default="value2" />
+
+    <!-- Global parameters -->
+    <param name="global_param" value="global_value" />
+
+    <!-- ROS parameters from YAML file -->
+    <rosparam file="$(find package_name)/config/parameters.yaml" />
+
+    <!-- Environment variables -->
+    <env name="ROS_MASTER_URI" value="http://localhost:11311" />
+
+    <!-- Node 1 -->
+    <node name="node1_name" pkg="package_name" type="node1_executable" output="screen">
+        <!-- Parameters for node 1 -->
+        <param name="param1" value="value1" />
+        <param name="param2" value="5" />
+        <!-- Using arg as parameter -->
+        <param name="param3" value="$(arg arg1)" />
+        <!-- Remappings for node 1 -->
+        <remap from="old_topic_1" to="new_topic_1"/>
+    </node>
+
+    <!-- Node 2 -->
+    <node name="node2_name" pkg="package_name" type="node2_executable" output="screen">
+        <!-- Parameters for node 2 -->
+        <param name="param3" value="10" />
+        <param name="param4" value="true" />
+        <!-- Using arg as parameter -->
+        <param name="param5" value="$(arg arg2)" />
+        <!-- Remappings for node 2 -->
+        <remap from="old_topic_2" to="new_topic_2"/>
+    </node>
+</launch>
